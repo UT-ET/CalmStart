@@ -15,27 +15,8 @@
     <link rel="favicon" href="favicon.ico">
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+    <a href="https://github.com/UT-ET/AwesomePages">
 
-
-<script>
-
-$(document).ready(function () {
-    $.getJSON('https://api.coinmarketcap.com/v1/ticker/',
-    function (json) {
-        var tr;
-        var total;
-        for (var i = 0; i < json.length; i++) {
-            tr = $('<tr/>');
-            tr.append("<td>" + json[i].name + "</td>");
-            tr.append("<td>" + json[i].price_usd + "</td>");
-            tr.append("<td>" + json[i].rank + "</td>");
-            tr.append("<td>" + (json[i].price_usd * json[i].rank).toFixed(2) + "</td>");
-            total=total+json[i].rank
-            $('table').append(tr);
-        }
-    });
-});
-</script>
 
 </head>
 
@@ -45,12 +26,16 @@ $(document).ready(function () {
 <style>
 body {
     background-color: #E9D0B6;
-
 }
 </style>
+<br>
+<div class="topcorner">
+  <button type="button">Previous</button>  <button type="button">Next</button> 
+</div>
 
 <div class="menu-container">
-    <img src="https://static1.squarespace.com/static/51c748abe4b0c275d0aa86bf/56141f2be4b0a4afc2d17505/561587f3e4b0f890085b86fb/1469211516261/?format=500w">
+    <img class="image-edge-blur" src="https://static1.squarespace.com/static/51c748abe4b0c275d0aa86bf/56141f2be4b0a4afc2d17505/561587f3e4b0f890085b86fb/1469211516261/?format=500w">
 </div>
+
 
 </body>
