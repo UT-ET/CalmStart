@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src= "https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <meta charset="UTF-8">
+    <title>ET's awesome page!</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Fjalla+One|Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="favicon" href="favicon.ico">
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+
+
+<script>
+
+$(document).ready(function () {
+    $.getJSON('https://api.coinmarketcap.com/v1/ticker/',
+    function (json) {
+        var tr;
+        var total;
+        for (var i = 0; i < json.length; i++) {
+            tr = $('<tr/>');
+            tr.append("<td>" + json[i].name + "</td>");
+            tr.append("<td>" + json[i].price_usd + "</td>");
+            tr.append("<td>" + json[i].rank + "</td>");
+            tr.append("<td>" + (json[i].price_usd * json[i].rank).toFixed(2) + "</td>");
+            total=total+json[i].rank
+            $('table').append(tr);
+        }
+    });
+});
+</script>
+
+</head>
+
+
+<body>
+
+<style>
+body {
+    background-color: #E9D0B6;
+
+}
+</style>
+
+<div class="menu-container">
+    <img src="https://static1.squarespace.com/static/51c748abe4b0c275d0aa86bf/56141f2be4b0a4afc2d17505/561587f3e4b0f890085b86fb/1469211516261/?format=500w">
+</div>
+
+</body>
