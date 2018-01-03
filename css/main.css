@@ -14,10 +14,6 @@ html, body {
     align-items: center;
 }
 
-.image-edge-blur {
-    box-shadow: 0 0 8px 8px white inset;
-}
-
 
 .topcorner{
     position:fixed;
