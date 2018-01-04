@@ -14,6 +14,11 @@ html, body {
     align-items: center;
 }
 
+.image-size {
+    max-height: 90%;
+    max-width: 90%;
+}
+
 
 .topcorner{
     position:fixed;
