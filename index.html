@@ -13,7 +13,7 @@
     <link rel="favicon" href="favicon.ico">
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
-    <a href="https://github.com/UT-ET/AwesomePages">
+
 </head>
 
 
@@ -27,11 +27,23 @@
         $.getJSON('https://np.reddit.com/r/cinemagraphs/top/.json?count=20',
         function (json) {
 
-            for (var i = 0; i < json.data.children.length; i++) {
+            for (var i = 0; i < 1; i++) {
                 new_url = json.data.children[i].data.url;
+                var ext = new_url.substr(new_url.length - 4);
+                console.log(ext);
+                if (ext == "gifv"){
+                    new_url = new_url.slice(0,-1);
+                } else if (ext == ".gif") {
+                    new_url = new_url;
+
+                } else {
+                    continue;
+                }
+
                 console.log(new_url);
 
                 document.getElementById('foo-bar').src = new_url;
+
 
             }
         });
@@ -42,16 +54,17 @@
 
 <style>
 body {
-    background-color: #E9D0B6;
+    background-color: #fff;
 }
 </style>
 <br>
 <div class="topcorner">
-  <button type="button">Previous</button>  <button type="button">Next</button>
+  <p><input type="button" id="buttonPrevious" value="Previous" onclick="previousPicture()"> <input type="button" id="buttonNext" value="Next" onclick="nextPicture()"></p>
+</body>
 </div>
 
 <div class="menu-container">
-    <img id="foo-bar">
+    <img id="foo-bar" class="image-size">
 </div>
 
 
