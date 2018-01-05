@@ -63,24 +63,19 @@ $(document).ready(function () {
 function nextPicture() {
     j = (j + 1) % new_arr.length;
     document.getElementById('foo-bar').src = new_arr[j];
+    document.getElementById("permalink").href = perma_arr[j];
 }
 
 
 function previousPicture() {
     j = j == 0 ? new_arr.length-1 : j-1;
     document.getElementById('foo-bar').src = new_arr[j];
+    document.getElementById("permalink").href = perma_arr[j];
 }
-
-
 </script>
 
-
-
-
-<br>
 <div class="topcorner">
-  <button onclick="previousPicture()">Previous</button> <button onclick="nextPicture()">Next</button> 
-</body>
+  <span class="glyphicon glyphicon-chevron-left" onclick="previousPicture()"></span> <span class="glyphicon glyphicon-chevron-right" onclick="nextPicture()"></span>
 </div>
 
 <div class="menu-container">
