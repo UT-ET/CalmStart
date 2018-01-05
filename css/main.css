@@ -16,13 +16,30 @@ html, body {
 }
 
 .image-size {
-    max-height: 90%;
-    max-width: 90%;
+    max-height: 70%;
+    max-width: 70%;
 }
 
 
 .topcorner{
     position:fixed;
-    top:10px;
-    right: 10px;
+    top:20px;
+    right: 40px;
+ }
+
+.background-grad {
+  background-image: radial-gradient(#8b9da9, #fff6e4);
+  box-shadow: inset 0 0 100px hsla(0,0%,0%,.3);
+}
+
+.github-icon {
+    position:fixed;
+    bottom:20px;
+    left: 40px;
+ }
+
+.reddit-icon {
+    position:fixed;
+    bottom:20px;
+    right: 40px;
  }

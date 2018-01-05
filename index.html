@@ -14,37 +14,48 @@
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
 
 
-
-
-<body>
+<body class="background-grad">
 
 <script>
-
 var i = 0;
 var j = 0;
 var new_url;
+var new_perma_link;
 var new_arr = [];
+var perma_arr = [];
+var reddit = "https://www.reddit.com";
+
 $(document).ready(function () {
     $.getJSON('https://np.reddit.com/r/cinemagraphs/top/.json?count=50',
     function (json) {
         for (i; i < json.data.children.length; i++){
             new_url = json.data.children[i].data.url;
+            new_perma_link = json.data.children[i].data.permalink;
+            new_perma_link = new_perma_link.replace(/(^")|("$)/g, "");
+            new_perma_link = reddit + new_perma_link;
+            new_perma_link = new_perma_link;
+            console.log(new_perma_link);
             var ext = new_url.substr(new_url.length - 4);
             console.log(json.data.children.length);
             if (ext == "gifv"){
                 new_url = new_url.slice(0,-1);
                 new_arr.push(new_url);
+                perma_arr.push(new_perma_link);
             } else if (ext == ".gif") {
                 new_url = new_url;
                 new_arr.push(new_url);
+                perma_arr.push(new_perma_link);
             }
         }
         console.log(new_arr);
         j = Math.floor(Math.random() * ((new_arr.length-1) - 0 + 1)) + 0;
         document.getElementById('foo-bar').src = new_arr[j];
+        document.getElementById("permalink").href = new_perma_link;
 
     });
 });
@@ -74,6 +85,17 @@ function previousPicture() {
 
 <div class="menu-container">
     <img id="foo-bar" class="image-size">
+</div>
+
+
+<div>
+    <a href="https://github.com/AmitaChauhan/CinemagraphPages" target="_blank">
+        <img class="github-icon" src="./github.png">
+    </a>
+    <a id="permalink" target="_blank">
+        <img class="reddit-icon" src="./reddit.png">
+    </a>
+
 </div>
 
 
