@@ -1,6 +1,6 @@
-### ET's awesome page! ###
+### Calm Start ###
 
-Opens a beautiful page for you.
+Start your tabs with serenity.
 
 
 
