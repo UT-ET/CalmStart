@@ -81,19 +81,32 @@ $(window).bind('keydown', function(e){
   <span class="glyphicon glyphicon-chevron-left" onclick="previousPicture()"></span> <span class="glyphicon glyphicon-chevron-right" onclick="nextPicture()"></span>
 </div>
 
-<div class="menu-container">
-    <img id="image" class="image-size">
+<div class="outer-container">
+    <div class="inner-container">
+        <img id="image" class="image-size">
+    </div>
+
+    <div class="nav-container">
+        <ul class="footer-nav">
+            <li> <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-hashtags="CalmStart"></a></li>
+            <li>
+            <div class="fb-share-button" data-href="http://www.thecalmstart.com/" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.thecalmstart.com%2F&amp;src=sdkpreparse">Share</a></div>
+            </li>
+        </ul>
+        <span class="glyphicon glyphicon-heart-empty"></span>
+    </div>
 </div>
 
 
-<div>
-    <a href="https://github.com/AmitaChauhan/CinemagraphPages" target="_blank">
-        <img class="github-icon" src="./github.png">
-    </a>
-    <a id="permalink" target="_blank">
-        <img class="reddit-icon" src="./reddit.png">
-    </a>
-</div>
+
+<a href="https://github.com/AmitaChauhan/CinemagraphPages" target="_blank">
+    <img class="github-icon" src="./github.png">
+</a>
+
+<a id="permalink" target="_blank">
+    <img class="reddit-icon" src="./reddit.png">
+</a>
+
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-76705415-6"></script>
@@ -104,5 +117,18 @@ $(window).bind('keydown', function(e){
 
   gtag('config', 'UA-76705415-6');
 </script>
+
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 
 </body>
